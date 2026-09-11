@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberShield AI — Scam &amp; Phishing Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scanline" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <svg class="brand-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 2 L27 6.5 V14.5 C27 21.5 21.8 26.5 15 28.5 C8.2 26.5 3 21.5 3 14.5 V6.5 L15 2Z" stroke="#38BDF8" stroke-width="2" fill="rgba(56,189,248,0.08)"/>
+          <path d="M10.5 15.2 L13.3 18 L19.5 11.5" stroke="#38BDF8" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">CyberShield <span class="accent">AI</span></span>
+      </div>
+      <span class="badge-live">Local · Rule-based engine</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="intro">
+      <h1>Is this message trying to scam you?</h1>
+      <p class="lede">
+        Paste a suspicious text, email, WhatsApp/SMS message, or a link below.
+        CyberShield AI checks it against known phishing, scam, and social-engineering
+        patterns and tells you exactly what looks wrong — and what to do about it.
+      </p>
+    </section>
+
+    <section class="scan-panel" aria-label="Content scanner">
+      <label for="content-input" class="field-label">Message, email or link to check</label>
+      <textarea
+        id="content-input"
+        rows="7"
+        placeholder="Example: Dear Customer, your account will be suspended in 24 hours. Click here to verify: http://secure-update-bank.tk/login"
+      ></textarea>
+
+      <div class="panel-footer">
+        <span id="char-count" class="char-count">0 / 5000</span>
+        <div class="actions">
+          <button id="example-btn" class="btn btn-ghost" type="button">Try an example</button>
+          <button id="scan-btn" class="btn btn-primary" type="button">
+            <span id="scan-btn-text">Scan for threats</span>
+          </button>
+        </div>
+      </div>
+
+      <p id="error-msg" class="error-msg" hidden></p>
+    </section>
+
+    <section id="results" class="results" hidden aria-live="polite">
+
+      <div class="result-header">
+        <div class="risk-meter">
+          <svg viewBox="0 0 120 68" class="gauge">
+            <path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+            <path id="gauge-arc" d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#22C55E" stroke-width="10" stroke-linecap="round"
+                  stroke-dasharray="157" stroke-dashoffset="157"/>
+          </svg>
+          <div class="gauge-score">
+            <span id="score-value">0</span>
+            <span class="score-max">/100</span>
+          </div>
+        </div>
+        <div class="result-headline">
+          <span id="risk-badge" class="risk-badge">Safe</span>
+          <p id="risk-summary" class="risk-summary">—</p>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-block">
+          <h2>Red flags detected</h2>
+          <ul id="flags-list" class="flags-list"></ul>
+          <p id="no-flags" class="empty-note" hidden>No known red flags were found — but always stay cautious with unsolicited messages.</p>
+        </div>
+
+        <div class="result-block">
+          <h2>Links found in this content</h2>
+          <ul id="urls-list" class="urls-list"></ul>
+          <p id="no-urls" class="empty-note" hidden>No links were found in this content.</p>
+        </div>
+
+        <div class="result-block full-width">
+          <h2>What you should do</h2>
+          <ul id="recommendations-list" class="recommendations-list"></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        CyberShield AI uses a transparent, rule-based heuristic engine (pattern &amp; keyword matching),
+        not a live threat-intelligence feed. Treat every result as a helpful second opinion, not a
+        guarantee — when in doubt, verify directly with the organization involved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
